@@ -33,7 +33,7 @@ This full stack application allows you to plan your next workout! Whether it is 
 
 ### **_Getting Started_**
 
-#### At the home page, select Upper Body or Lower Body workout. From there, you can
+#### At the home page, select Upper Body or Lower Body workout. From there, you can select the intended body part and browse different workouts containing their description, set and reps. If you do not see a workout you like, you can add your own!
 
 ---
 
