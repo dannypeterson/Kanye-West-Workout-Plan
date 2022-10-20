@@ -1,6 +1,6 @@
 # The-New-Workout-Plan
 
-This is your new workout plan to look like Thor in Love and Thunder (with clothes on though of course!)
+This is your new workout plan to look like Chris Hemsworth in Thor: Love and Thunder (2022) (with clothes on of course!)
 
 ## Date: 10/19/2022
 
@@ -12,7 +12,7 @@ This is your new workout plan to look like Thor in Love and Thunder (with clothe
 
 ### **_Description_**
 
-This full stack application allows you to plan your next workout! Whether it is a chest day, or the dreadful leg day, we got you covered.
+This full stack application allows you to plan your next workout! Whether it is a chest day, or the dreadful leg day, we got you covered. This app lets you select or add an Upper Body or Lower Body workout where you can pick and choose which exercises you would like to do.
 
 ---
 
