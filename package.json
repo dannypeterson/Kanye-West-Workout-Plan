@@ -1,0 +1,23 @@
+{
+  "name": "kanye-west-workout-plan",
+  "version": "1.0.0",
+  "description": "This is your new workout plan to look like Chris Hemsworth in Thor: Love and Thunder (2022) (with clothes on of course!)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dannypeterson/Kanye-West-Workout-Plan.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dannypeterson/Kanye-West-Workout-Plan/issues"
+  },
+  "homepage": "https://github.com/dannypeterson/Kanye-West-Workout-Plan#readme",
+  "dependencies": {
+    "mongoose": "^6.6.5"
+  }
+}
