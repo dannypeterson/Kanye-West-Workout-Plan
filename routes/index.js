@@ -11,6 +11,8 @@ router.get('/home', (req, res) => {
 //exercises
 router.get('/exercises', controllers.getAllExercises)
 router.get('/exercises/:id', controllers.getExerciseById)
+router.post('/exercises', controllers.createExercise)
+router.delete('/exercises/:id', controllers.deleteExerciseById)
 
 //muscle groups
 router.get('/musclegroups', controllers.findMuscleGroups)

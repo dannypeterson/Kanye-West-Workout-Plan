@@ -13,18 +13,40 @@ const getExerciseById = async (req, res) => {
   }
 }
 
-const getAllExercises = async (req, res) => {
-  const exercise = await Exercise.find()
-  res.json(exercise)
-}
-
 const findMuscleGroups = async (req, res) => {
   const group = await MuscleGroup.find()
   res.json(group)
 }
 
+const getAllExercises = async (req, res) => {
+  const exercise = await Exercise.find()
+  res.json(exercise)
+}
+
+const deleteExerciseById = async (req, res) => {
+  const { id } = req.params
+  const deleteExercise = await Exercise.findByIdAndDelete(id)
+  if (deleteExercise) {
+    return res.send('Exercise deleted')
+  }
+}
+
+const createExercise = async (req, res) => {
+  try {
+    const exercise = await new Exercise(req.body)
+    await exercise.save()
+    return res.status(201).json({
+      exercise
+    })
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+
 module.exports = {
   getExerciseById,
   findMuscleGroups,
-  getAllExercises
+  getAllExercises,
+  createExercise,
+  deleteExerciseById
 }
