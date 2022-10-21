@@ -43,10 +43,19 @@ const createExercise = async (req, res) => {
   }
 }
 
+const updateExercise = async (req, res) => {
+  const { id } = req.params
+  const exercise = await Exercise.findByIdAndUpdate(id, req.body)
+  if (exercise) {
+    return res.send('Updated exercise')
+  }
+}
+
 module.exports = {
   getExerciseById,
   findMuscleGroups,
   getAllExercises,
   createExercise,
-  deleteExerciseById
+  deleteExerciseById,
+  updateExercise
 }

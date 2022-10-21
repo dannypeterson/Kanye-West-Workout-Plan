@@ -13,6 +13,7 @@ router.get('/exercises', controllers.getAllExercises)
 router.get('/exercises/:id', controllers.getExerciseById)
 router.post('/exercises', controllers.createExercise)
 router.delete('/exercises/:id', controllers.deleteExerciseById)
+router.put('/exercises/:id', controllers.updateExercise)
 
 //muscle groups
 router.get('/musclegroups', controllers.findMuscleGroups)
