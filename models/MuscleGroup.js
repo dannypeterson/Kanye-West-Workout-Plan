@@ -1,12 +1,12 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const UpperBodyPart = new Schema(
+const MuscleGroup = new Schema(
   {
     name: { type: String, required: true },
-    workouts: [{ type: Schema.Types.ObjectId, ref: 'Workout' }]
+    exercises: [{ type: Schema.Types.ObjectId, ref: 'Exercise' }]
   },
   { timestamps: true }
 )
 
-module.exports = UpperBodyPart
+module.exports = MuscleGroup
