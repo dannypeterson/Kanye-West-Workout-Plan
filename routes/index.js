@@ -1,5 +1,6 @@
 const { Router } = require('express')
 const router = Router()
+const controllers = require('../controllers')
 
 router.get('/home', (req, res) => {
   res.send(
@@ -7,25 +8,35 @@ router.get('/home', (req, res) => {
   )
 })
 
-router.get('/workouts', (req, res) => {
-  res.send(
-    'This is the homepage that will show all 5 muscle groups (chest, back, etc).'
-  )
-})
+//exercises
+router.get('/exercises', controllers.getAllExercises)
+router.get('/exercises/:id', controllers.getExerciseById)
 
-router.get('/workouts/chest', (req, res) => {
+//muscle groups
+router.get('/musclegroups', controllers.findMuscleGroups)
+
+//chest workouts
+router.get('/musclegroups/chest', (req, res) => {
   res.send('This is where the chest exercises will be displayed')
 })
-router.get('/workouts/back', (req, res) => {
+
+//back workouts
+router.get('/musclegroups/back', (req, res) => {
   res.send('This is where the back exercises will be displayed')
 })
-router.get('/workouts/shoulders', (req, res) => {
+
+//shoulders
+router.get('/musclegroups/shoulders', (req, res) => {
   res.send('This is where the shoulder exercises will be displayed')
 })
-router.get('/workouts/arms', (req, res) => {
+
+//arms
+router.get('/musclegroups/arms', (req, res) => {
   res.send('This is where the arm exercises will be displayed')
 })
-router.get('/workouts/legs', (req, res) => {
+
+//legs
+router.get('/musclegroups/legs', (req, res) => {
   res.send('This is where the leg exercises will be displayed')
 })
 

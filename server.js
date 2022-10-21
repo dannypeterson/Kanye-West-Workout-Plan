@@ -5,6 +5,9 @@ const db = require('./db')
 const routes = require('./routes')
 const PORT = process.env.PORT || 3001
 
+//require controllers
+const createChestExercise = require('./controllers')
+
 const app = express()
 
 app.use(cors())
@@ -12,9 +15,9 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(logger('dev'))
 
-//Call controllers in here
-
 app.use('/', routes)
+
+//Call controllers in here
 
 //Call constrollers in here
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
