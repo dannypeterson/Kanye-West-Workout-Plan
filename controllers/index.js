@@ -54,15 +54,15 @@ const deleteExerciseById = async (req, res) => {
 }
 
 const createExercise = async (req, res) => {
-  try {
-    const exercise = await new Exercise(req.body)
-    await exercise.save()
-    return res.status(201).json({
-      exercise
-    })
-  } catch (error) {
-    return res.status(500).json({ error: error.message })
-  }
+  const { id } = req.params
+  const exercise = await new Exercise(req.body)
+  await exercise.save()
+  console.log('Created new exercise')
+  const updateGroup = await MuscleGroup.updateOne(
+    { _id: id },
+    { $push: { exercises: exercise } }
+  )
+  return res.send(`Pushed exercise to ${id} array`)
 }
 
 const updateExercise = async (req, res) => {

@@ -11,7 +11,7 @@ router.get('/home', (req, res) => {
 //exercises
 router.get('/exercises', controllers.getAllExercises)
 router.get('/exercises/:id', controllers.getExerciseById)
-router.post('/exercises', controllers.createExercise)
+router.post('/exercises/:id', controllers.createExercise)
 router.delete('/exercises/:id', controllers.deleteExerciseById)
 router.put('/exercises/:id', controllers.updateExercise)
 
