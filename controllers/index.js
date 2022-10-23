@@ -1,6 +1,7 @@
 const { Exercise, MuscleGroup } = require('../models/')
 const db = require('../db')
 
+//functions for router
 const getExerciseById = async (req, res) => {
   try {
     const { id } = req.params
@@ -20,6 +21,27 @@ const findMuscleGroups = async (req, res) => {
 
 const getAllExercises = async (req, res) => {
   const exercise = await Exercise.find()
+  res.json(exercise)
+}
+
+const getChestExercises = async (req, res) => {
+  const exercise = await MuscleGroup.find({ name: 'Chest' })
+  res.json(exercise)
+}
+const getBackExercises = async (req, res) => {
+  const exercise = await MuscleGroup.find({ name: 'Back' })
+  res.json(exercise)
+}
+const getShouldersExercises = async (req, res) => {
+  const exercise = await MuscleGroup.find({ name: 'Shoulders' })
+  res.json(exercise)
+}
+const getArmsExercises = async (req, res) => {
+  const exercise = await MuscleGroup.find({ name: 'Arms' })
+  res.json(exercise)
+}
+const getLegsExercises = async (req, res) => {
+  const exercise = await MuscleGroup.find({ name: 'Legs' })
   res.json(exercise)
 }
 
@@ -57,5 +79,10 @@ module.exports = {
   getAllExercises,
   createExercise,
   deleteExerciseById,
-  updateExercise
+  updateExercise,
+  getChestExercises,
+  getBackExercises,
+  getShouldersExercises,
+  getArmsExercises,
+  getLegsExercises
 }

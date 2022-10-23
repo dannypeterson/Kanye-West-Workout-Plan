@@ -17,9 +17,6 @@ app.use(logger('dev'))
 
 app.use('/', routes)
 
-//Call controllers in here
-
-//Call constrollers in here
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 app.listen(PORT, () => {

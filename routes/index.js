@@ -18,29 +18,19 @@ router.put('/exercises/:id', controllers.updateExercise)
 //muscle groups
 router.get('/musclegroups', controllers.findMuscleGroups)
 
-//chest workouts
-router.get('/musclegroups/chest', (req, res) => {
-  res.send('This is where the chest exercises will be displayed')
-})
+//chest exercises
+router.get('/musclegroups/chest', controllers.getChestExercises)
 
-//back workouts
-router.get('/musclegroups/back', (req, res) => {
-  res.send('This is where the back exercises will be displayed')
-})
+//back exercises
+router.get('/musclegroups/back', controllers.getBackExercises)
 
 //shoulders
-router.get('/musclegroups/shoulders', (req, res) => {
-  res.send('This is where the shoulder exercises will be displayed')
-})
+router.get('/musclegroups/shoulders', controllers.getShouldersExercises)
 
 //arms
-router.get('/musclegroups/arms', (req, res) => {
-  res.send('This is where the arm exercises will be displayed')
-})
+router.get('/musclegroups/arms', controllers.getArmsExercises)
 
 //legs
-router.get('/musclegroups/legs', (req, res) => {
-  res.send('This is where the leg exercises will be displayed')
-})
+router.get('/musclegroups/legs', controllers.getLegsExercises)
 
 module.exports = router
