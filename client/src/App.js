@@ -1,6 +1,7 @@
 import './App.css'
 import Home from './pages/Home'
 import MuscleGroupPage from './pages/MuscleGroupPage'
+import ExerciseList from './pages/ExerciseList'
 import { Routes, Route } from 'react-router-dom'
 
 const App = () => {
@@ -9,6 +10,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/musclegroups" element={<MuscleGroupPage />} />
+        <Route path="/musclegroups/:name" element={<ExerciseList />} />
       </Routes>
     </div>
   )

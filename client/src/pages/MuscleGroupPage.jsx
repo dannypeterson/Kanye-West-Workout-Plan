@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 
 
-const MuscleGroupPage = (props) => {
+const MuscleGroupPage = () => {
   
 //useState to change state of muscle group
 const [muscleGroups, setMuscleGroups] = useState([])
@@ -23,7 +23,9 @@ getMuscleGroups()
   return(
     <div>
       <h1>Select your muscle group</h1>
-      <MuscleGroup muscleGroups={muscleGroups} getMuscleGroups={getMuscleGroups}/>
+      <MuscleGroup muscleGroups={muscleGroups} 
+      getMuscleGroups={getMuscleGroups}
+      />
     </div>
   )
 }
