@@ -5,7 +5,7 @@ const Home = () => {
   
   
   return(
-    <div className="home page">
+    <div className="homepage">
 
       <div className="home title">
       <h1>Welcome to the New Workout Plan. Its time to stop putting off the gym and time to start prioritizing your health.</h1>
@@ -13,9 +13,16 @@ const Home = () => {
       <h2>Select a featured workout plan to get started, or create your own!</h2>
       </div>
 
-      <div className="home button">
-      <Link to="/musclegroups">Create Workout</Link>
-      {/* <Link to="/featured">Featured Workouts</Link> */}
+      <div className="homebutton">
+        <div>
+          <Link to="/musclegroups">Create Workout</Link>
+        </div>
+        <div>
+          <Link to="/myworkouts">My Workouts</Link>
+        </div>
+        <div>
+          <Link to="/featured">Featured Workouts</Link>
+        </div>
       </div>
 
     </div>

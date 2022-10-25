@@ -7,7 +7,7 @@ const Header = () => {
     <header>
       <nav>
         <Link to='/musclegroups'>Back</Link>
-        <Link to='/newexercise'>Create Exercise</Link>
+        <Link to='/newexercise'>Edit Exercises</Link>
       </nav>
     </header>
   )

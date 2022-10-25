@@ -6,7 +6,7 @@ const Form = () => {
   const [exercises, setExercises] = useState([])
 
   const getExercises = async () => {
-    const response = await axios.get('http://localhost:3001/newexercise')
+    const response = await axios.get('http://localhost:3001/exercise')
     console.log(response.data)
     setExercises(response.data)
   }
@@ -27,10 +27,7 @@ const Form = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    let response = await axios.post(
-      'http://localhost:3001/newexercise',
-      formState
-    )
+    let response = await axios.post('http://localhost:3001/exercise', formState)
     console.log(response)
 
     //need to somehow push the new post into a muscleGroup exercises array
@@ -41,6 +38,11 @@ const Form = () => {
   const handleChange = (event) => {
     setFormState({ ...formState, [event.target.id]: event.target.value })
   }
+
+  // //delete function
+  // const deleteExercise = async () => {
+  //   const response = await axios.delete(`http://localhost:3001/exercises/${id}`)
+  // }
 
   return (
     <div>
@@ -92,7 +94,10 @@ const Form = () => {
       <h2>Exercises:</h2>
       {exercises.map((exercise) => (
         <div key={exercise._id}>
-          <h3>{exercise.name}</h3>
+          <h3>
+            {exercise.name}
+            <button>Delete</button>
+          </h3>
         </div>
       ))}
     </div>
