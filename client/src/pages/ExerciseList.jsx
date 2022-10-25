@@ -12,7 +12,6 @@ const ExerciseList = (props) => {
 
 const findWorkouts = async () => {
   const response = await axios.get(`http://localhost:3001/musclegroups/${id}`)
-  console.log(response)
   setExercises(response.data.exercises)
 }
 
