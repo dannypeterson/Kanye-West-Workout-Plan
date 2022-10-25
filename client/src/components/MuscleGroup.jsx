@@ -7,7 +7,7 @@ const navigate=useNavigate()
   return(
     <div className="musclegroup">
       {props.muscleGroups.map((muscleGroup) => (
-        <div key={muscleGroup._id} onClick={() => navigate(`/musclegroups/${muscleGroup.name}`)}>
+        <div key={muscleGroup._id} onClick={() => navigate(`/musclegroups/${muscleGroup._id}`)}>
           <h2>{muscleGroup.name}</h2>
         </div>
       ))}
