@@ -14,7 +14,8 @@ const Home = () => {
       </div>
 
       <div className="home button">
-      <Link to="/musclegroups">Select Muscle Group</Link>
+      <Link to="/musclegroups">Create Workout</Link>
+      {/* <Link to="/featured">Featured Workouts</Link> */}
       </div>
 
     </div>

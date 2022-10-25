@@ -24,27 +24,6 @@ const getAllExercises = async (req, res) => {
   res.json(exercise)
 }
 
-const getChestExercises = async (req, res) => {
-  const exercise = await MuscleGroup.find({ name: 'Chest' })
-  res.json(exercise)
-}
-const getBackExercises = async (req, res) => {
-  const exercise = await MuscleGroup.find({ name: 'Back' })
-  res.json(exercise)
-}
-const getShouldersExercises = async (req, res) => {
-  const exercise = await MuscleGroup.find({ name: 'Shoulders' })
-  res.json(exercise)
-}
-const getArmsExercises = async (req, res) => {
-  const exercise = await MuscleGroup.find({ name: 'Arms' })
-  res.json(exercise)
-}
-const getLegsExercises = async (req, res) => {
-  const exercise = await MuscleGroup.find({ name: 'Legs' })
-  res.json(exercise)
-}
-
 const deleteExerciseById = async (req, res) => {
   const { id } = req.params
   const deleteExercise = await Exercise.findByIdAndDelete(id)
@@ -54,15 +33,16 @@ const deleteExerciseById = async (req, res) => {
 }
 
 const createExercise = async (req, res) => {
-  const { id } = req.params
+  // const { id } = req.params
   const exercise = await new Exercise(req.body)
   await exercise.save()
+  res.send(exercise)
   console.log('Created new exercise')
-  const updateGroup = await MuscleGroup.updateOne(
-    { _id: id },
-    { $push: { exercises: exercise } }
-  )
-  return res.send(`Pushed exercise to ${id} array`)
+  // const updateGroup = await MuscleGroup.updateOne(
+  //   { _id: id },
+  //   { $push: { exercises: exercise } }
+  // )
+  // return res.send(`Pushed exercise to ${id} array`)
 }
 
 const updateExercise = async (req, res) => {
@@ -73,6 +53,15 @@ const updateExercise = async (req, res) => {
   }
 }
 
+const populateExercises = async (req, res) => {
+  const { id } = req.params
+  const group = await MuscleGroup.findById(id)
+    .populate('exercises')
+    .exec((err, exercises) => {
+      res.send(exercises)
+    })
+}
+
 module.exports = {
   getExerciseById,
   findMuscleGroups,
@@ -80,9 +69,5 @@ module.exports = {
   createExercise,
   deleteExerciseById,
   updateExercise,
-  getChestExercises,
-  getBackExercises,
-  getShouldersExercises,
-  getArmsExercises,
-  getLegsExercises
+  populateExercises
 }

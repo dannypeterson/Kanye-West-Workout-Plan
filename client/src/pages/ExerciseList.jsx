@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
 import Exercise from "../components/Exercise"
+import Header from "../components/Header"
 import { useParams } from "react-router-dom"
 
 const ExerciseList = (props) => {
@@ -21,6 +22,7 @@ findWorkouts()
 
   return(
     <div>
+      <Header />
       <h1>Exercises</h1>
       <div>
         <Exercise exercises={exercises} findWorkouts={findWorkouts}/>

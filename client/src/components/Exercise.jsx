@@ -1,4 +1,4 @@
-import ExerciseList from "../pages/ExerciseList"
+
 
 const Exercise = (props) => {
 

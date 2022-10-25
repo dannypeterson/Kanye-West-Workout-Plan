@@ -3,8 +3,8 @@ const { Schema } = require('mongoose')
 
 const Exercise = new Schema(
   {
-    bodyPart: [{ type: String, required: true }],
     name: { type: String, required: true },
+    bodyPart: [{ type: String, required: true }],
     description: { type: String, required: true },
     equipment: { type: String, required: true },
     sets: { type: Number, required: false },

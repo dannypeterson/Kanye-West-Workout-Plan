@@ -31,3 +31,13 @@ code {
   height: 60px;
   width: 100px;
 }
+
+nav {
+  background-color: teal;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
