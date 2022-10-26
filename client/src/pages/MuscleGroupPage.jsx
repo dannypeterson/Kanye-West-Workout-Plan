@@ -41,22 +41,25 @@ const handleChange = (event) => {
   }
 
   return(
-    <div>
-      <h1>Name your workout:</h1>
-      
-    <input 
-    onChange={handleChange}
-    id="name"
-    type="text"
-    value={props.formState.name}
-    />
+    <div className='musclegrouppage'>
+      <div className='nameworkout'>
+        <h1 id='name'>Name your workout:</h1>
+          <input
+          placeholder='Enter workout name'
+          onChange={handleChange}
+          id="name"
+          type="text"
+          value={props.formState.name}
+          />
+      </div>
 
       <h1>Select your muscle group:</h1>
       <MuscleGroup muscleGroups={muscleGroups} 
       getMuscleGroups={getMuscleGroups}
       />
-
-      <button onClick={handleSubmit}type="submit">Save Workout</button>
+      <div className='submit'>
+        <button onClick={handleSubmit}type="submit">Save Workout</button>
+      </div>
     </div>
   )
 }
