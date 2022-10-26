@@ -29,9 +29,6 @@ const Form = () => {
     event.preventDefault()
     let response = await axios.post('http://localhost:3001/exercise', formState)
     console.log(response)
-
-    //need to somehow push the new post into a muscleGroup exercises array
-
     setFormState(initialState)
   }
 

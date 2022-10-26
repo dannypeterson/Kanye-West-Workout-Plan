@@ -3,12 +3,12 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 
 
-const MuscleGroupPage = () => {
+const MuscleGroupPage = (props) => {
   
 //useState to change state of muscle group
 const [muscleGroups, setMuscleGroups] = useState([])
 
-//axios call to get workout information
+//axios call to get muscle groups, mapped in MuscleGroup component
 const getMuscleGroups = async () => {
   const response = await axios.get('http://localhost:3001/musclegroups')
   setMuscleGroups(response.data)
@@ -20,12 +20,41 @@ getMuscleGroups()
 
 },[])
 
+
+//save state of name form
+const handleChange = (event) => {
+  props.setFormState({...props.formState, [event.target.id]: event.target.value})
+  console.log(props.formState)
+}
+
+  //post workout to myWorkouts model
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    let response = await axios.post(
+      'http://localhost:3001/myworkouts',
+      props.formState
+    )
+    props.setFormState(props.initialState)
+    console.log(response)
+  }
+
   return(
     <div>
-      <h1>Select your muscle group</h1>
+      <h1>Name your workout:</h1>
+      
+    <input 
+    onChange={handleChange}
+    id="name"
+    type="text"
+    value={props.formState.name}
+    />
+
+      <h1>Select your muscle group:</h1>
       <MuscleGroup muscleGroups={muscleGroups} 
       getMuscleGroups={getMuscleGroups}
       />
+
+      <button onSubmit={handleSubmit}type="submit">Save Workout</button>
     </div>
   )
 }

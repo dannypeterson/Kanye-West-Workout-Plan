@@ -19,7 +19,7 @@ code {
   align-items: center;
 }
 
-
+/* select muscle groups */
 
 .allgroups{
   display: flex;
@@ -39,6 +39,23 @@ code {
 .groupimg {
   height: 60px;
   width: 100px;
+}
+
+/* exercises list */
+.exercises{
+  text-align: center;
+}
+
+.addworkout {
+  width: auto;
+  height: 50px;
+  background-color: bisque;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.addworkout:hover {
+  background-color: blanchedalmond;
 }
 
 nav {
