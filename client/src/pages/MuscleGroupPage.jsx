@@ -1,9 +1,11 @@
 import MuscleGroup from '../components/MuscleGroup'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-
+import { useNavigate } from 'react-router-dom'
 
 const MuscleGroupPage = (props) => {
+
+  const navigate = useNavigate()
   
 //useState to change state of muscle group
 const [muscleGroups, setMuscleGroups] = useState([])
@@ -35,7 +37,7 @@ const handleChange = (event) => {
       props.formState
     )
     props.setFormState(props.initialState)
-    console.log(response)
+    navigate('/myworkouts')
   }
 
   return(
@@ -54,7 +56,7 @@ const handleChange = (event) => {
       getMuscleGroups={getMuscleGroups}
       />
 
-      <button onSubmit={handleSubmit}type="submit">Save Workout</button>
+      <button onClick={handleSubmit}type="submit">Save Workout</button>
     </div>
   )
 }
