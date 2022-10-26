@@ -12,10 +12,7 @@ const Exercise = (props) => {
               Add to workout
             </button>
           </h2>
-          <h3>
-            Sets: {exercise.sets}x{exercise.reps}
-          </h3>
-          <p>Equipment: {exercise.equipment}</p>
+          <h3>Equipment: {exercise.equipment}</h3>
           <p>{exercise.description}</p>
           <img src={exercise.img} alt="poster"></img>
         </div>

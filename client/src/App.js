@@ -45,7 +45,21 @@ const App = () => {
         <Route path="/exercise" element={<Form />} />
         <Route path="/featured" element={<FeaturedWorkout />} />
         <Route path="/myworkouts" element={<MyWorkout />} />
-        <Route path="/myworkouts/:id" element={<IndivWorkout />} />
+        <Route
+          path="/myworkouts/:id"
+          element={<IndivWorkout setFormState={setFormState} />}
+        />
+        <Route
+          path="/myworkouts/:id/update"
+          element={
+            <MuscleGroupPage
+              formState={formState}
+              setFormState={setFormState}
+              initialState={initialState}
+              update={true}
+            />
+          }
+        />
       </Routes>
     </div>
   )

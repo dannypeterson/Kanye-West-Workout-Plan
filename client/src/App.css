@@ -111,4 +111,5 @@ form{
 /* my workout page */
 .myworkout {
   cursor: pointer;
+  display: block;
 }

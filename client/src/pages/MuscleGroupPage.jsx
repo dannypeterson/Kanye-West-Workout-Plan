@@ -1,11 +1,12 @@
 import MuscleGroup from '../components/MuscleGroup'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 const MuscleGroupPage = (props) => {
 
   const navigate = useNavigate()
+  const { id } = useParams()
   
 //useState to change state of muscle group
 const [muscleGroups, setMuscleGroups] = useState([])
@@ -32,12 +33,17 @@ const handleChange = (event) => {
   //post workout to myWorkouts model
   const handleSubmit = async (event) => {
     event.preventDefault()
-    let response = await axios.post(
-      'http://localhost:3001/myworkouts',
-      props.formState
-    )
-    props.setFormState(props.initialState)
-    navigate('/myworkouts')
+    if (!props.update) {
+      let response = await axios.post(
+        'http://localhost:3001/myworkouts',
+        props.formState
+      )
+      props.setFormState(props.initialState)
+      navigate('/myworkouts')
+    } else {
+      let response = await axios.put(`http://localhost:3001/myworkouts/${id}`, props.formState)
+      props.setFormState(props.initialState)
+    }
   }
 
   return(
