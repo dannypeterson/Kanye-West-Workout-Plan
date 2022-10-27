@@ -5,7 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import Header from '../components/Header'
 
 const MuscleGroupPage = (props) => {
-
+  console.log(props.update)
   const navigate = useNavigate()
   const { id } = useParams()
   
@@ -34,16 +34,18 @@ const handleChange = (event) => {
   //post workout to myWorkouts model
   const handleSubmit = async (event) => {
     event.preventDefault()
-    if (!props.update) {
-      let response = await axios.post(
+    if (props.update) {
+      console.log('put request')
+      let response = await axios.put(`http://localhost:3001/myworkouts/${id}`, props.formState)
+      props.setFormState(props.initialState)
+    } else {
+      console.log('post request')
+let response = await axios.post(
         'http://localhost:3001/myworkouts',
         props.formState
       )
       props.setFormState(props.initialState)
       navigate('/myworkouts')
-    } else {
-      let response = await axios.put(`http://localhost:3001/myworkouts/${id}/update`, props.formState)
-      props.setFormState(props.initialState)
     }
   }
 

@@ -1,5 +1,6 @@
 *{
   font-family: 'Montserrat', sans-serif;
+  margin: 0;
 }
 
 /* header stuff */
@@ -14,13 +15,11 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 10%;
+  padding: 15px 10%;
   background-color: #24252A;
 }
 
-#myworkouts { 
-  background-color: #24252A;  
-}
+
 
 a:link, a:visited {
   text-decoration: none;
@@ -43,8 +42,15 @@ a:link, a:visited {
 .nav_links li a {
   transition: all 0.3s ease 0s;
 }
+.nav_links li p {
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+}
 
 .nav_links li a:hover {
+  color: #0088a9;
+}
+.nav_links li p:hover {
   color: #0088a9;
 }
 
@@ -107,7 +113,8 @@ code {
 }
 
 .submit>button:hover {
-  background-color: lightslategray
+  background-color: #383a41;
+
 }
 
 
@@ -128,6 +135,10 @@ code {
   background-color: #24252A;
   color: bisque;
   margin: 25px;
+}
+
+.musclegroup:hover {
+  background-color: #383a41;
 }
 
 .groupimg {
@@ -160,13 +171,60 @@ form{
 }
 
 /* my workout page */
+#myworkouts { 
+  background-color: #24252A;  
+  padding-bottom: 10px;
+  text-align: center;
+  color: #edf0f1;
+}
+
+.workoutlist {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
 .myworkout {
   cursor: pointer;
   display: block;
+  color: #edf0f1;
+  padding: 20px;
+  font-size: 24px;
+}
+
+.myworkoutpage {
+  background-color: darkgray;
+  height: 100vh;
 }
 
 #addbutton {
-  position: absolute;
-  bottom: 50%;
-  left: 50%;
+  text-align: center;
+  margin-top: 150px;
+}
+
+.addbutton {
+  width: 300px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #24252A;
+  color: #edf0f1;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* indiv wokrout page */
+
+.addexercise, .deleteexercise {
+  width: 300px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #24252A;
+  color: #edf0f1;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 150px;
+}
+
+.addexercise {
+  margin: 0 15px;
 }

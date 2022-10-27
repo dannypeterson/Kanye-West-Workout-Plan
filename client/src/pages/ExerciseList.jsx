@@ -20,7 +20,6 @@ const findWorkouts = async () => {
 useEffect(() => {
 findWorkouts()
 props.setBackButton(true)
-console.log(props.backButton)
 },[])
 
 //push id to workout.exercises array

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams, useNavigate } from 'react-router-dom'
+import Header from './Header'
 
 const IndivWorkout = (props) => {
   const navigate = useNavigate()
@@ -12,11 +13,11 @@ const IndivWorkout = (props) => {
   const getExercises = async () => {
     const response = await axios.get(`http://localhost:3001/myworkouts/${id}`)
     setWorkout(response.data)
-    console.log(response)
   }
 
   useEffect(() => {
     getExercises()
+    props.setMyPage(true)
   }, [])
 
   const updateWorkout = () => {
@@ -28,12 +29,15 @@ const IndivWorkout = (props) => {
   }
 
   const deleteWorkout = async () => {
-    const resonse = await axios.delete(`http://localhost:3001/myworkouts/${id}`)
+    const response = await axios.delete(
+      `http://localhost:3001/myworkouts/${id}`
+    )
     navigate('/myworkouts')
   }
 
   return (
     <div>
+      <Header myPage={props.myPage} />
       {workout.exercises?.length > 0 &&
         workout.exercises.map((exercise) => (
           <div key={exercise._id}>
@@ -45,8 +49,12 @@ const IndivWorkout = (props) => {
             </h2>
           </div>
         ))}
-      <button onClick={() => updateWorkout()}>Add exercises</button>
-      <button onClick={() => deleteWorkout()}>Delete Workout</button>
+      <button className="addexercise" onClick={() => updateWorkout()}>
+        Add exercises
+      </button>
+      <button className="deleteexercise" onClick={() => deleteWorkout()}>
+        Delete Workout
+      </button>
     </div>
   )
 }

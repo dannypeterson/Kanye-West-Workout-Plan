@@ -1,3 +1,4 @@
+
 import Header from "../components/Header"
 
 const FeaturedWorkout = () => {
@@ -5,6 +6,7 @@ const FeaturedWorkout = () => {
   return(
     <div>
       <Header />
+      
     </div>
   )
 }

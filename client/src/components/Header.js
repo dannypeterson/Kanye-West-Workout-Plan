@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const Header = (props) => {
+  const navigate = useNavigate()
+
   return (
     <header>
       <img
@@ -14,7 +17,9 @@ const Header = (props) => {
             <Link to="/">Home</Link>
           </li>
 
-          <li>{props.backButton && <Link to="/musclegroups">Back</Link>}</li>
+          <li>
+            <p onClick={() => navigate(-1)}>Back</p>
+          </li>
         </ul>
       </nav>
     </header>

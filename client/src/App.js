@@ -10,8 +10,8 @@ import { useState, useEffect } from 'react'
 import IndivWorkout from './components/IndivWorkout'
 
 const App = () => {
-  //only on /musclegroups/id
   const [backButton, setBackButton] = useState(false)
+  const [myPage, setMyPage] = useState(false)
 
   //form on MuscleGroupPage
   const initialState = {
@@ -52,10 +52,19 @@ const App = () => {
         />
         <Route path="/exercise" element={<Form />} />
         <Route path="/featured" element={<FeaturedWorkout />} />
-        <Route path="/myworkouts" element={<MyWorkout />} />
+        <Route
+          path="/myworkouts"
+          element={<MyWorkout myPage={myPage} setMyPage={setMyPage} />}
+        />
         <Route
           path="/myworkouts/:id"
-          element={<IndivWorkout setFormState={setFormState} />}
+          element={
+            <IndivWorkout
+              setFormState={setFormState}
+              myPage={myPage}
+              setMyPage={setMyPage}
+            />
+          }
         />
         <Route
           path="/myworkouts/:id/update"

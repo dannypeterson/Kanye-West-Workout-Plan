@@ -1,7 +1,11 @@
-const { Exercise, MuscleGroup } = require('../models/')
+const {
+  Exercise,
+  MuscleGroup,
+  MyWorkout,
+  FeaturedWorkout
+} = require('../models/')
 const db = require('../db')
 
-//functions for router
 const getExerciseById = async (req, res) => {
   try {
     const { id } = req.params
@@ -33,16 +37,10 @@ const deleteExerciseById = async (req, res) => {
 }
 
 const createExercise = async (req, res) => {
-  // const { id } = req.params
   const exercise = await new Exercise(req.body)
   await exercise.save()
   res.send(exercise)
   console.log('Created new exercise')
-  // const updateGroup = await MuscleGroup.updateOne(
-  //   { _id: id },
-  //   { $push: { exercises: exercise } }
-  // )
-  // return res.send(`Pushed exercise to ${id} array`)
 }
 
 const updateExercise = async (req, res) => {
@@ -62,6 +60,45 @@ const populateExercises = async (req, res) => {
     })
 }
 
+const postWorkout = async (req, res) => {
+  const workout = await new MyWorkout(req.body)
+  await workout.save()
+  res.send(workout)
+  console.log('Created new workout')
+}
+
+const getMyWorkouts = async (req, res) => {
+  const workout = await MyWorkout.find()
+  res.send(workout)
+}
+
+const getMyWorkoutById = async (req, res) => {
+  const { id } = req.params
+  const workout = await MyWorkout.findById(id)
+    .populate('exercises')
+    .exec((err, exercises) => {
+      res.send(exercises)
+    })
+}
+const getFeaturedWorkouts = async (req, res) => {
+  const workout = await FeaturedWorkout.find()
+  res.send(workout)
+}
+
+const updateWorkout = async (req, res) => {
+  const { id } = req.params
+  const workout = await MyWorkout.findByIdAndUpdate(id, req.body, { new: true })
+  if (workout) {
+    return res.send('Updated exercise')
+  }
+}
+
+const deleteWorkout = async (req, res) => {
+  const { id } = req.params
+  const workout = await MyWorkout.findByIdAndDelete(id)
+  res.send('Exercise deleted')
+}
+
 module.exports = {
   getExerciseById,
   findMuscleGroups,
@@ -69,5 +106,11 @@ module.exports = {
   createExercise,
   deleteExerciseById,
   updateExercise,
-  populateExercises
+  populateExercises,
+  getMyWorkouts,
+  getFeaturedWorkouts,
+  postWorkout,
+  getMyWorkoutById,
+  updateWorkout,
+  deleteWorkout
 }

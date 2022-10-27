@@ -18,7 +18,17 @@ router.delete('/exercises/:id', controllers.deleteExerciseById)
 
 //muscle groups
 router.get('/musclegroups', controllers.findMuscleGroups)
-
 router.get('/musclegroups/:id', controllers.populateExercises)
+
+//my workouts
+router.get('/myworkouts', controllers.getMyWorkouts)
+router.post('/myworkouts', controllers.postWorkout)
+
+router.get('/myworkouts/:id', controllers.getMyWorkoutById)
+router.put('/myworkouts/:id', controllers.updateWorkout)
+router.delete('/myworkouts/:id', controllers.deleteWorkout)
+
+//featured workouts
+router.get('/featured', controllers.getFeaturedWorkouts)
 
 module.exports = router
