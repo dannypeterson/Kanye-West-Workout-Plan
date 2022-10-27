@@ -1,6 +1,6 @@
 const Exercise = (props) => {
   return (
-    <div className="exercises">
+    <div className="exercisesmap">
       {props.exercises.map((exercise) => (
         <div key={exercise._id}>
           <h2>
@@ -14,7 +14,7 @@ const Exercise = (props) => {
           </h2>
           <h3>Equipment: {exercise.equipment}</h3>
           <p>{exercise.description}</p>
-          <img src={exercise.img} alt="poster"></img>
+          <img className="exerciseimg" src={exercise.img} alt="poster"></img>
         </div>
       ))}
     </div>

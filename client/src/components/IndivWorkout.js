@@ -17,7 +17,6 @@ const IndivWorkout = (props) => {
 
   useEffect(() => {
     getExercises()
-    props.setMyPage(true)
   }, [])
 
   const updateWorkout = () => {
@@ -37,13 +36,12 @@ const IndivWorkout = (props) => {
 
   return (
     <div>
-      <Header myPage={props.myPage} />
+      <Header />
+      <h1 id="myworkouts">{workout.name}</h1>
       {workout.exercises?.length > 0 &&
         workout.exercises.map((exercise) => (
-          <div key={exercise._id}>
-            <h1>
-              {exercise.name} <button>x</button>
-            </h1>
+          <div className="customworkout" key={exercise._id}>
+            <h1>{exercise.name}</h1>
             <h2>
               {exercise.sets}x{exercise.reps}
             </h2>

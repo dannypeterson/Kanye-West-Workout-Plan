@@ -14,13 +14,13 @@ const Home = () => {
       </div>
 
       <div className="homebuttons">
-        <div >
+        <div id="link1">
           <Link className="homebutton" to="/musclegroups">Create Workout</Link>
         </div>
-        <div>
+        <div id="link2">
           <Link className="homebutton" to="/myworkouts">My Workouts</Link>
         </div>
-        <div>
+        <div id="link3">
           <Link className="homebutton" to="/featured">Featured Workouts</Link>
         </div>
       </div>

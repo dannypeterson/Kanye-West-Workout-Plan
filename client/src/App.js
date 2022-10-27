@@ -10,9 +10,6 @@ import { useState, useEffect } from 'react'
 import IndivWorkout from './components/IndivWorkout'
 
 const App = () => {
-  const [backButton, setBackButton] = useState(false)
-  const [myPage, setMyPage] = useState(false)
-
   //form on MuscleGroupPage
   const initialState = {
     name: '',
@@ -20,10 +17,6 @@ const App = () => {
   }
 
   const [formState, setFormState] = useState(initialState)
-
-  useEffect(() => {
-    console.log(formState)
-  }, [formState])
 
   return (
     <div className="main">
@@ -42,29 +35,15 @@ const App = () => {
         <Route
           path="/musclegroups/:id"
           element={
-            <ExerciseList
-              formState={formState}
-              setFormState={setFormState}
-              backButton={backButton}
-              setBackButton={setBackButton}
-            />
+            <ExerciseList formState={formState} setFormState={setFormState} />
           }
         />
         <Route path="/exercise" element={<Form />} />
         <Route path="/featured" element={<FeaturedWorkout />} />
-        <Route
-          path="/myworkouts"
-          element={<MyWorkout myPage={myPage} setMyPage={setMyPage} />}
-        />
+        <Route path="/myworkouts" element={<MyWorkout />} />
         <Route
           path="/myworkouts/:id"
-          element={
-            <IndivWorkout
-              setFormState={setFormState}
-              myPage={myPage}
-              setMyPage={setMyPage}
-            />
-          }
+          element={<IndivWorkout setFormState={setFormState} />}
         />
         <Route
           path="/myworkouts/:id/update"

@@ -19,8 +19,6 @@ header {
   background-color: #24252A;
 }
 
-
-
 a:link, a:visited {
   text-decoration: none;
 }
@@ -76,7 +74,18 @@ code {
 }
 
 .homebutton {
-  color: navy
+  display: flex;
+  text-align: center;
+}
+
+
+#link1, #link2, #link3 {
+  width: 300px;
+  height: 100%;
+  margin: 10px;
+  background-color: #24252A;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 /* MuscleGroupPage.js */
@@ -114,9 +123,9 @@ code {
 
 .submit>button:hover {
   background-color: #383a41;
+  transition: all 0.3s ease 0s;
 
 }
-
 
 /* MuscleGroup.js */
 .allgroups{
@@ -139,16 +148,29 @@ code {
 
 .musclegroup:hover {
   background-color: #383a41;
+  transition: all 0.3s ease 0s;
 }
 
 .groupimg {
-  height: 60px;
-  width: 100px;
+  height: 60%;
+  width: 80%;
+  margin-top: 10px;;
+  border: 2px solid bisque;
+  border-radius: 10px;
+}
+.select {
+  text-align: center;
 }
 
 /* exercises list */
 .exercises{
   text-align: center;
+  margin: 20px;
+}
+
+.exerciseimg {
+  margin-bottom: 30px;
+  margin-top: 10px;;
 }
 
 .addworkout {
@@ -161,6 +183,7 @@ code {
 
 .addworkout:hover {
   background-color: blanchedalmond;
+  transition: all 0.3s ease 0s;
 }
 
 
@@ -212,6 +235,11 @@ form{
   cursor: pointer;
 }
 
+.addbutton:hover {
+  background-color: #313239;
+  transition: all 0.3s ease 0s;
+}
+
 /* indiv wokrout page */
 
 .addexercise, .deleteexercise {
@@ -227,4 +255,12 @@ form{
 
 .addexercise {
   margin: 0 15px;
+}
+
+.customworkout {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 15px;
 }

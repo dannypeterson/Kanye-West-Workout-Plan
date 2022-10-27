@@ -8,7 +8,7 @@ const Exercise = new Schema(
     equipment: { type: String, required: true },
     sets: { type: Number, required: false },
     reps: { type: String, required: false },
-    rpe: { type: Number, required: false }
+    img: { type: String, required: false }
   },
   { timestamps: true }
 )

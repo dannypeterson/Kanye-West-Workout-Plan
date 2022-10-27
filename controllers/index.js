@@ -23,6 +23,14 @@ const findMuscleGroups = async (req, res) => {
   res.json(group)
 }
 
+const updateMuscleGroup = async (req, res) => {
+  const { id } = req.params
+  const exercise = await MuscleGroup.findByIdAndUpdate(id, req.body)
+  if (exercise) {
+    res.send('Updated MuscleGroup')
+  }
+}
+
 const getAllExercises = async (req, res) => {
   const exercise = await Exercise.find()
   res.json(exercise)
@@ -33,6 +41,14 @@ const deleteExerciseById = async (req, res) => {
   const deleteExercise = await Exercise.findByIdAndDelete(id)
   if (deleteExercise) {
     return res.send('Exercise deleted')
+  }
+}
+
+const deleteMuscleGroupById = async (req, res) => {
+  const { id } = req.params
+  const workout = await MuscleGroup.findByIdAndDelete(id)
+  if (workout) {
+    return res.send('muscle group deleted')
   }
 }
 
@@ -112,5 +128,7 @@ module.exports = {
   postWorkout,
   getMyWorkoutById,
   updateWorkout,
-  deleteWorkout
+  deleteWorkout,
+  deleteMuscleGroupById,
+  updateMuscleGroup
 }
