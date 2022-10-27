@@ -13,15 +13,15 @@ const Home = () => {
       <h2>Select a featured workout plan to get started, or create your own!</h2>
       </div>
 
-      <div className="homebutton">
-        <div>
-          <Link to="/musclegroups">Create Workout</Link>
+      <div className="homebuttons">
+        <div >
+          <Link className="homebutton" to="/musclegroups">Create Workout</Link>
         </div>
         <div>
-          <Link to="/myworkouts">My Workouts</Link>
+          <Link className="homebutton" to="/myworkouts">My Workouts</Link>
         </div>
         <div>
-          <Link to="/featured">Featured Workouts</Link>
+          <Link className="homebutton" to="/featured">Featured Workouts</Link>
         </div>
       </div>
 

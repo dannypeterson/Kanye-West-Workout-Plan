@@ -1,3 +1,53 @@
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* header stuff */
+li, a {
+  font-weight: 500;
+  font-size: 16px;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+  background-color: #24252A;
+}
+
+#myworkouts { 
+  background-color: #24252A;  
+}
+
+a:link, a:visited {
+  text-decoration: none;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+}
+
+.nav_links {
+  list-style: none;
+}
+
+.nav_links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.nav_links li a {
+  transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover {
+  color: #0088a9;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -17,6 +67,10 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.homebutton {
+  color: navy
 }
 
 /* MuscleGroupPage.js */
@@ -46,7 +100,7 @@ code {
   width: 80vw;
   border: 2px solid bisque;
   border-radius: 20px;;
-  background-color: navy;
+  background-color: #24252A;
   cursor: pointer;
   font-size: larger;
   color: bisque;
@@ -71,7 +125,7 @@ code {
   height: 20vh;
   border: 4px solid bisque;
   border-radius: 50px;
-  background-color: navy;
+  background-color: #24252A;
   color: bisque;
   margin: 25px;
 }
@@ -98,9 +152,6 @@ code {
   background-color: blanchedalmond;
 }
 
-nav {
-  background-color: teal;
-}
 
 form{
   display: flex;
@@ -112,4 +163,10 @@ form{
 .myworkout {
   cursor: pointer;
   display: block;
+}
+
+#addbutton {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
 }

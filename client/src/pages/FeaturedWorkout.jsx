@@ -1,9 +1,11 @@
-
+import Header from "../components/Header"
 
 const FeaturedWorkout = () => {
 
   return(
-    <div>Featured Workouts:</div>
+    <div>
+      <Header />
+    </div>
   )
 }
 

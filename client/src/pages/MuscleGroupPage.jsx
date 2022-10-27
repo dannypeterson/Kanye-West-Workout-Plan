@@ -2,6 +2,7 @@ import MuscleGroup from '../components/MuscleGroup'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import Header from '../components/Header'
 
 const MuscleGroupPage = (props) => {
 
@@ -41,13 +42,14 @@ const handleChange = (event) => {
       props.setFormState(props.initialState)
       navigate('/myworkouts')
     } else {
-      let response = await axios.put(`http://localhost:3001/myworkouts/${id}`, props.formState)
+      let response = await axios.put(`http://localhost:3001/myworkouts/${id}/update`, props.formState)
       props.setFormState(props.initialState)
     }
   }
 
   return(
     <div className='musclegrouppage'>
+      <Header />
       <div className='nameworkout'>
         <h1 id='name'>Name your workout:</h1>
           <input

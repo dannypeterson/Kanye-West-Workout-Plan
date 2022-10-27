@@ -10,6 +10,9 @@ import { useState, useEffect } from 'react'
 import IndivWorkout from './components/IndivWorkout'
 
 const App = () => {
+  //only on /musclegroups/id
+  const [backButton, setBackButton] = useState(false)
+
   //form on MuscleGroupPage
   const initialState = {
     name: '',
@@ -39,7 +42,12 @@ const App = () => {
         <Route
           path="/musclegroups/:id"
           element={
-            <ExerciseList formState={formState} setFormState={setFormState} />
+            <ExerciseList
+              formState={formState}
+              setFormState={setFormState}
+              backButton={backButton}
+              setBackButton={setBackButton}
+            />
           }
         />
         <Route path="/exercise" element={<Form />} />

@@ -19,6 +19,8 @@ const findWorkouts = async () => {
 
 useEffect(() => {
 findWorkouts()
+props.setBackButton(true)
+console.log(props.backButton)
 },[])
 
 //push id to workout.exercises array
@@ -31,7 +33,7 @@ const handleClick = (id) => {
 
   return(
     <div className="exercises">
-      <Header />
+      <Header backButton={props.backButton}/>
       <h1>{groupName} Exercises</h1>
       <div>
         <Exercise exercises={exercises} findWorkouts={findWorkouts} handleClick={handleClick}/>

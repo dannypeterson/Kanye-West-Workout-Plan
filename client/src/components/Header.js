@@ -1,11 +1,21 @@
 import { Link } from 'react-router-dom'
 
-const Header = () => {
+const Header = (props) => {
   return (
     <header>
+      <img
+        src="https://www.vhv.rs/dpng/d/116-1162001_clip-art-nwhealthy-emojis-by-chi-dumbbell-emoji.png"
+        className="logo"
+        alt="logo"
+      ></img>
       <nav>
-        <Link to="/musclegroups">Back</Link>
-        <Link to="/exercise">Edit Exercises</Link>
+        <ul className="nav_links">
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+
+          <li>{props.backButton && <Link to="/musclegroups">Back</Link>}</li>
+        </ul>
       </nav>
     </header>
   )
