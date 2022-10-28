@@ -7,7 +7,8 @@ const Header = (props) => {
   return (
     <header>
       <img
-        src="https://www.vhv.rs/dpng/d/116-1162001_clip-art-nwhealthy-emojis-by-chi-dumbbell-emoji.png"
+        // src="https://www.vhv.rs/dpng/d/116-1162001_clip-art-nwhealthy-emojis-by-chi-dumbbell-emoji.png"
+        src="../../assets/images/lifter.png"
         className="logo"
         alt="logo"
       ></img>

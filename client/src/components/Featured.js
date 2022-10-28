@@ -18,7 +18,7 @@ const Featured = () => {
   }, [])
 
   return (
-    <div>
+    <div className="featuredworkout">
       <Header />
       <h1 id="myworkouts">{workout.name}</h1>
       {workout.exercises?.length > 0 &&

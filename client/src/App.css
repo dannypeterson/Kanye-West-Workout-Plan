@@ -119,6 +119,7 @@ code {
   cursor: pointer;
   font-size: larger;
   color: bisque;
+  margin: 20px
 }
 
 .submit>button:hover {
@@ -137,13 +138,13 @@ code {
 .musclegroup {
   cursor: pointer;
   text-align: center;
-  width: 30vw;
-  height: 20vh;
-  border: 4px solid bisque;
+  width: 25vw;
+  height: 25vh;
+  border: 3px solid bisque;
   border-radius: 50px;
   background-color: #24252A;
   color: bisque;
-  margin: 25px;
+  margin: 15px;
 }
 
 .musclegroup:hover {
@@ -152,8 +153,8 @@ code {
 }
 
 .groupimg {
-  height: 60%;
-  width: 80%;
+  height: 70%;
+  width: 60%;
   margin-top: 10px;;
   border: 2px solid bisque;
   border-radius: 10px;
@@ -290,3 +291,8 @@ form{
 }
 
 /* featured workout id page */
+
+.featuredworkout {
+  display: flex;
+  flex-direction: column;
+}

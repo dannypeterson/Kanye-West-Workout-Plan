@@ -54,7 +54,6 @@ let response = await axios.post(
       <Header />
       <h1 id="myworkouts">Create workout</h1>
       <div className='nameworkout'>
-        {/* <h1 id='name'>Name your workout:</h1> */}
           <input
           placeholder='Enter workout name:'
           onChange={handleChange}
