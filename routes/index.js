@@ -32,5 +32,6 @@ router.delete('/myworkouts/:id', controllers.deleteWorkout)
 
 //featured workouts
 router.get('/featured', controllers.getFeaturedWorkouts)
+router.get('/featured/:id', controllers.findFeaturedById)
 
 module.exports = router

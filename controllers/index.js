@@ -101,6 +101,12 @@ const getFeaturedWorkouts = async (req, res) => {
   res.send(workout)
 }
 
+const findFeaturedById = async (req, res) => {
+  const { id } = req.params
+  const workout = await FeaturedWorkout.findById(id).populate('exercises')
+  res.send(workout)
+}
+
 const updateWorkout = async (req, res) => {
   const { id } = req.params
   const workout = await MyWorkout.findByIdAndUpdate(id, req.body, { new: true })
@@ -130,5 +136,6 @@ module.exports = {
   updateWorkout,
   deleteWorkout,
   deleteMuscleGroupById,
-  updateMuscleGroup
+  updateMuscleGroup,
+  findFeaturedById
 }

@@ -264,3 +264,29 @@ form{
   align-items: center;
   margin: 15px;
 }
+
+/* featured workout page */
+.featured {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 300px;
+  cursor: pointer;
+}
+
+#indiv {
+  width: auto;
+  border: 5px solid bisque;
+  border-radius: 15px;
+  background-color: #24252A;
+  color: #edf0f1;
+  text-align: center;
+  margin: 20px 50px;
+}
+
+#featuredimg {
+  width: 300px;
+  height: 200px;
+}
+
+/* featured workout id page */
