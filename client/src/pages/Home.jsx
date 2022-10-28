@@ -1,12 +1,14 @@
 import React from "react"
-import { Link } from 'react-router-dom'
+import { useNavigate } from "react-router-dom"
+import Header from "../components/Header"
 
-const Home = () => {
+const Home = (props) => {
   
-  
+  const navigate = useNavigate()
+
   return(
     <div className="homepage">
-
+      <Header homePage={props.homePage}/>
       <div className="home title">
       <h1>Welcome to the New Workout Plan.</h1>
       <h2> Its time to stop putting off the gym and time to start prioritizing your health.</h2>
@@ -14,14 +16,17 @@ const Home = () => {
       </div>
 
       <div className="homebuttons">
-        <div id="link1">
-          <Link className="homebutton" to="/musclegroups">Create Workout</Link>
+
+        <div onClick={() => navigate('/musclegroups')} id="link1">
+          <h3>Create Workout</h3>
         </div>
-        <div id="link2">
-          <Link className="homebutton" to="/myworkouts">My Workouts</Link>
+
+        <div onClick={() => navigate('/myworkouts')} id="link2">
+          <h3>My Workouts</h3>
         </div>
-        <div id="link3">
-          <Link className="homebutton" to="/featured">Featured Workouts</Link>
+
+        <div onClick={() => navigate('/featured')} id="link3">
+          <h3>Featured Workouts</h3>
         </div>
       </div>
 

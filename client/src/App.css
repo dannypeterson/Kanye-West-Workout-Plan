@@ -67,25 +67,31 @@ code {
 }
 
 /* home page */
-.homepage {
+/* .homepage {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+} */
+
+.homebuttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
 }
 
-.homebutton {
-  display: flex;
-  text-align: center;
-}
-
-
 #link1, #link2, #link3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 300px;
-  height: 100%;
-  margin: 10px;
+  height: 100px;
   background-color: #24252A;
   border-radius: 20px;
   cursor: pointer;
+  color:#edf0f1;
+  margin: 10%;
 }
 
 /* MuscleGroupPage.js */

@@ -22,7 +22,7 @@ const App = () => {
   return (
     <div className="main">
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home homePage={true} />} />
         <Route
           path="/musclegroups"
           element={
