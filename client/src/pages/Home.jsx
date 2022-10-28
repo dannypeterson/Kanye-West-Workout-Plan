@@ -9,10 +9,15 @@ const Home = (props) => {
   return(
     <div className="homepage">
       <Header homePage={props.homePage}/>
-      <div className="home title">
-      <h1>Welcome to the New Workout Plan.</h1>
-      <h2> Its time to stop putting off the gym and time to start prioritizing your health.</h2>
+      <h1 id="myworkouts">Welcome to the New Workout Plan.</h1>
+      
+      <div className="hometitle">
+
+      <div id="header1">
+      <h2> Its time to stop putting off the gym and prioritize your health.</h2>
       <h2>Select a featured workout plan to get started, or create your own!</h2>
+      </div>
+
       </div>
 
       <div className="homebuttons">

@@ -59,6 +59,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: darkgray;
 }
 
 code {
@@ -67,18 +68,27 @@ code {
 }
 
 /* home page */
-/* .homepage {
+.homepage {
+  background-color: darkgray;
+  color: #edf0f1;
+  height: 100%;
+  width: 100%;
+}
+
+.hometitle {
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-} */
+  justify-content: center;
+}
 
 .homebuttons {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.homebuttons > div {
+  margin-top: 20px;
 }
 
 #link1, #link2, #link3 {
@@ -91,8 +101,28 @@ code {
   border-radius: 20px;
   cursor: pointer;
   color:#edf0f1;
-  margin: 10%;
 }
+
+#link1:hover, #link2:hover, #link3:hover {
+  background-color: #383a41;
+  transition: all 0.3s ease 0s;
+}
+
+#header1 {
+  margin: 20px;;
+  width: fit-content;
+  height: auto;
+  background-color:#0088a9 ;
+  border-radius: 15px;
+  text-align: center;
+  color: bisque;
+  padding: 10px;;
+}
+
+#header1>h2 {
+  margin: 20px;
+}
+
 
 /* MuscleGroupPage.js */
 
@@ -119,19 +149,17 @@ code {
 .submit>button {
   height: 100px;
   width: 80vw;
-  border: 2px solid bisque;
   border-radius: 20px;;
   background-color: #24252A;
   cursor: pointer;
   font-size: larger;
-  color: bisque;
+  color:#edf0f1;
   margin: 20px
 }
 
 .submit>button:hover {
   background-color: #383a41;
   transition: all 0.3s ease 0s;
-
 }
 
 /* MuscleGroup.js */
@@ -222,6 +250,12 @@ form{
   font-size: 24px;
 }
 
+.myworkout:hover {
+  color: #0088a9;
+  transition: all 0.3s ease 0s;
+
+}
+
 .myworkoutpage {
   background-color: darkgray;
   height: 100vh;
@@ -249,6 +283,7 @@ form{
 
 /* indiv wokrout page */
 
+
 .addexercise, .deleteexercise {
   width: 300px;
   height: 50px;
@@ -260,9 +295,29 @@ form{
   margin-top: 150px;
 }
 
+.addexercise:hover, .deleteexercise:hover {
+  color: #0088a9;
+  transition: all 0.3s ease 0s;
+}
+
 .addexercise {
   margin: 0 15px;
 }
+
+#exercisename {
+color: darkblue
+}
+
+#sets {
+  color: bisque;
+}
+
+#sets>button {
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
 
 .customworkout {
   display:flex;
@@ -281,6 +336,7 @@ form{
   cursor: pointer;
 }
 
+
 #indiv {
   width: auto;
   border: 5px solid bisque;
@@ -289,6 +345,11 @@ form{
   color: #edf0f1;
   text-align: center;
   margin: 20px 50px;
+}
+
+#indiv:hover {
+  color: #0088a9;
+  transition: all 0.3s ease 0s;
 }
 
 #featuredimg {

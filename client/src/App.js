@@ -18,6 +18,11 @@ const App = () => {
   }
 
   const [formState, setFormState] = useState(initialState)
+  const [isHovering, setIsHovering] = useState(false)
+
+  const handleMouseOver = () => {
+    setIsHovering(true)
+  }
 
   return (
     <div className="main">
@@ -45,7 +50,14 @@ const App = () => {
         <Route path="/myworkouts" element={<MyWorkout />} />
         <Route
           path="/myworkouts/:id"
-          element={<IndivWorkout setFormState={setFormState} />}
+          element={
+            <IndivWorkout
+              setFormState={setFormState}
+              isHovering={isHovering}
+              setIsHovering={setIsHovering}
+              handleMouseOver={handleMouseOver}
+            />
+          }
         />
         <Route
           path="/myworkouts/:id/update"

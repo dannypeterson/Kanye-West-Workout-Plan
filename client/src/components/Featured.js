@@ -24,8 +24,8 @@ const Featured = () => {
       {workout.exercises?.length > 0 &&
         workout.exercises.map((exercise) => (
           <div className="customworkout" key={exercise._id}>
-            <h1>{exercise.name}</h1>
-            <h2>
+            <h1 id="exercisename">{exercise.name}</h1>
+            <h2 id="sets">
               {exercise.sets}x{exercise.reps}
             </h2>
           </div>

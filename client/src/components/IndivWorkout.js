@@ -41,18 +41,22 @@ const IndivWorkout = (props) => {
       {workout.exercises?.length > 0 &&
         workout.exercises.map((exercise) => (
           <div className="customworkout" key={exercise._id}>
-            <h1>{exercise.name}</h1>
-            <h2>
-              {exercise.sets}x{exercise.reps}
+            <h1 id="exercisename">{exercise.name}</h1>
+            <h2 id="sets">
+              {exercise.sets}x{exercise.reps} <button>&#10006;</button>
             </h2>
           </div>
         ))}
-      <button className="addexercise" onClick={() => updateWorkout()}>
-        Add exercises
-      </button>
-      <button className="deleteexercise" onClick={() => deleteWorkout()}>
-        Delete Workout
-      </button>
+      <div id="workoutbuttons">
+        <div>
+          <button className="addexercise" onClick={() => updateWorkout()}>
+            Add exercises
+          </button>
+          <button className="deleteexercise" onClick={() => deleteWorkout()}>
+            Delete Workout
+          </button>
+        </div>
+      </div>
     </div>
   )
 }
