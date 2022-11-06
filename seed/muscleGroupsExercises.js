@@ -5,87 +5,94 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const main = async () => {
   //seed exercises here
-  // const exercise1 = await new Exercise({
-  //   bodyPart: ['chest'],
-  //   name: 'Bench Press (Barbell)',
-  //   description:
-  //     'Lay flat on the bench with your eyes directly under the barbell and feet flat on the ground. Place your hands on the bar and position your pinkies to the first knurling gap. Slowly lift the bar off the rack and lower it to the highest protruding part of your chest. Once you touch your chest with the bar, push it back up while controlling the weight.',
-  //   equipment: 'Barbell',
-  //   sets: 4,
-  //   reps: '10-12',
-  //   rpe: 9
-  // })
-  // exercise1.save()
+  const exercise1 = await new Exercise({
+    bodyPart: ['chest'],
+    name: 'Bench Press (Barbell)',
+    description:
+      'Lay flat on the bench with your eyes directly under the barbell and feet flat on the ground. Place your hands on the bar and position your pinkies to the first knurling gap. Slowly lift the bar off the rack and lower it to the highest protruding part of your chest. Once you touch your chest with the bar, push it back up while controlling the weight.',
+    equipment: 'Barbell',
+    sets: 4,
+    reps: '10-12',
+    rpe: 9,
+    img: 'https://musclewiki.com/media/uploads/male-barbell-bench-press-front_C2G7O8r.gif'
+  })
+  exercise1.save()
 
-  // const exercise2 = await new Exercise({
-  //   bodyPart: ['shoudlers'],
-  //   name: 'Shoulder Press',
-  //   description:
-  //     'Position your hands a thumb-width away from the knurling. Unrack the bar and hold it even with your collarbone. Push the bar straight up over your head until your arms lock out. Carefully return the bar to the shoulder height position.',
-  //   equipment: 'Barbell',
-  //   sets: 4,
-  //   reps: '10-12',
-  //   rpe: 9
-  // })
-  // exercise2.save()
+  const exercise2 = await new Exercise({
+    bodyPart: ['shoudlers'],
+    name: 'Shoulder Press',
+    description:
+      'Position your hands a thumb-width away from the knurling. Unrack the bar and hold it even with your collarbone. Push the bar straight up over your head until your arms lock out. Carefully return the bar to the shoulder height position.',
+    equipment: 'Barbell',
+    sets: 4,
+    reps: '10-12',
+    rpe: 9,
+    img: 'https://musclewiki.com/media/uploads/male-barbell-overhead-press-side_rFqqcjI.gif'
+  })
+  exercise2.save()
 
-  // const exercise3 = await new Exercise({
-  //   bodyPart: ['quads', 'hamstrings', 'glutes'],
-  //   name: 'Barbell Squat',
-  //   description:
-  //     'Position the barbell on your back and squat down until at least knee height, preferrably ATG. Then come back up.',
-  //   equipment: 'Barbell',
-  //   sets: 4,
-  //   reps: '10-12',
-  //   rpe: 9
-  // })
-  // exercise3.save()
+  const exercise3 = await new Exercise({
+    bodyPart: ['quads', 'hamstrings', 'glutes'],
+    name: 'Barbell Squat',
+    description:
+      'Position the barbell on your back and squat down until at least knee height, preferrably ATG. Then come back up.',
+    equipment: 'Barbell',
+    sets: 4,
+    reps: '10-12',
+    rpe: 9,
+    img: 'https://musclewiki.com/media/uploads/male-barbell-highbar-squat-side_bU7Qudy.gif'
+  })
+  exercise3.save()
 
-  // const exercise4 = await new Exercise({
-  //   bodyPart: ['biceps'],
-  //   name: 'Hammer curls',
-  //   description:
-  //     'Grab a dumbell, hold a neutral grip, and curl the dumbell using your elbow as an axis. Make sure to get the full range of motion.',
-  //   equipment: 'Dumbell',
-  //   sets: 4,
-  //   reps: '10-12',
-  //   rpe: 9
-  // })
-  // exercise4.save()
+  const exercise4 = await new Exercise({
+    bodyPart: ['biceps'],
+    name: 'Hammer curls',
+    description:
+      'Grab a dumbell, hold a neutral grip, and curl the dumbell using your elbow as an axis. Make sure to get the full range of motion.',
+    equipment: 'Dumbell',
+    sets: 4,
+    reps: '10-12',
+    rpe: 9,
+    img: 'https://musclewiki.com/media/uploads/male-dumbbell-hammer-curl-side_io6oHN7.gif'
+  })
+  exercise4.save()
 
-  // const exercise5 = await new Exercise({
-  //   bodyPart: ['triceps'],
-  //   name: 'Tricep extension',
-  //   description: 'Grap a rope cable attachment and push the rope down',
-  //   equipment: 'Cable, rope attatchment',
-  //   sets: 4,
-  //   reps: '10-12',
-  //   rpe: 9
-  // })
-  // exercise5.save()
+  const exercise5 = await new Exercise({
+    bodyPart: ['triceps'],
+    name: 'Tricep extension',
+    description: 'Grap a rope cable attachment and push the rope down',
+    equipment: 'Cable, rope attatchment',
+    sets: 4,
+    reps: '10-12',
+    rpe: 9,
+    img: 'https://musclewiki.com/media/uploads/male-cable-pushdown-front.gif'
+  })
+  exercise5.save()
 
-  // const exercise6 = await new Exercise({
-  //   bodyPart: ['lats', 'rhomboids', 'traps', 'rear delts'],
-  //   name: 'Barbell Row',
-  //   description:
-  //     'Holding a barbell with a pronated or supinated grip at knee height with your back bent and core engaged, pull the bar to your bellybutton following the path of your thighs. Then slowly return.',
-  //   equipment: 'Barbell',
-  //   sets: 4,
-  //   reps: '10-12',
-  //   rpe: 9
-  // })
-  // exercise6.save()
+  const exercise6 = await new Exercise({
+    bodyPart: ['lats', 'rhomboids', 'traps', 'rear delts'],
+    name: 'Barbell Row',
+    description:
+      'Holding a barbell with a pronated or supinated grip at knee height with your back bent and core engaged, pull the bar to your bellybutton following the path of your thighs. Then slowly return.',
+    equipment: 'Barbell',
+    sets: 4,
+    reps: '10-12',
+    rpe: 9,
+    img: 'https://musclewiki.com/media/uploads/male-barbell-bent-over-row-side.gif'
+  })
+  exercise6.save()
 
-  // const exercise7 = await new Exercise({
-  //   bodyPart: ['chest, triceps, shoulders'],
-  //   name: 'Dips',
-  //   description: 'Go down then back up',
-  //   equipment: 'Dip bar',
-  //   sets: 4,
-  //   reps: '10-12',
-  //   rpe: 9
-  // })
-  // exercise7.save()
+  const exercise7 = await new Exercise({
+    bodyPart: ['chest, triceps, shoulders'],
+    name: 'Dips',
+    description: 'Go down then back up',
+    equipment: 'Dip bar',
+    sets: 4,
+    reps: '10-12',
+    rpe: 9,
+    img: 'https://musclewiki.com/media/uploads/male-bodyweight-dips-front.gif'
+  })
+  exercise7.save()
 
   const inclineBench = await new Exercise({
     bodyPart: ['chest, shoulders'],
@@ -260,6 +267,8 @@ const main = async () => {
     {
       name: 'Chest',
       exercises: [
+        exercise1._id,
+        exercise7._id,
         inclineBench._id,
         dumbellFlys._id,
         dumbellIncline._id,
@@ -268,19 +277,32 @@ const main = async () => {
     },
     {
       name: 'Back',
-      exercises: [exercise8._id, exercise9._id, exercise10._id, exercise11._id]
+      exercises: [
+        exercise6._id,
+        exercise8._id,
+        exercise9._id,
+        exercise10._id,
+        exercise11._id
+      ]
     },
     {
       name: 'Shoulders',
-      exercises: [exercise12._id]
+      exercises: [exercise2._id, exercise7._id, exercise12._id]
     },
     {
       name: 'Arms',
-      exercises: [exercise13._id, exercise14._id, exercise15._id]
+      exercises: [
+        exercise4._id,
+        exercise5._id,
+        exercise7._id,
+        exercise13._id,
+        exercise14._id,
+        exercise15._id
+      ]
     },
     {
       name: 'Legs',
-      exercises: [exercise16._id, exercise17._id]
+      exercises: [exercise3._id, exercise16._id, exercise17._id]
     }
   ]
 
