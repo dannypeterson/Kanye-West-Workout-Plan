@@ -6,7 +6,7 @@ const Form = () => {
   const [exercises, setExercises] = useState([])
 
   const getExercises = async () => {
-    const response = await axios.get('http://localhost:3001/exercise')
+    const response = await axios.get('/api/exercise')
     console.log(response.data)
     setExercises(response.data)
   }

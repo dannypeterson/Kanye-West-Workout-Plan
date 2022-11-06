@@ -9,7 +9,7 @@ const Featured = () => {
   const [workout, setWorkout] = useState([])
 
   const getWorkout = async () => {
-    const response = await axios.get(`http://localhost:3001/featured/${id}`)
+    const response = await axios.get(`/api/featured/${id}`)
     setWorkout(response.data)
   }
 

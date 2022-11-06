@@ -13,7 +13,7 @@ const [myWorkouts, setMyWorkouts] = useState([])
 
 
   const getMyWorkouts = async () => {
-    const response = await axios.get('http://localhost:3001/myworkouts')
+    const response = await axios.get('/api/myworkouts')
     setMyWorkouts(response.data)
   }
 

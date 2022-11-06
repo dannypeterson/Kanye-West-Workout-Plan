@@ -9,7 +9,7 @@ const navigate = useNavigate()
 const [workouts, setWorkouts] = useState([])
 
 const getWorkouts = async () => {
-  const response = await axios.get('http://localhost:3001/featured')
+  const response = await axios.get('/api/featured')
   setWorkouts(response.data)
 }
 

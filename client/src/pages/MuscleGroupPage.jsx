@@ -13,7 +13,7 @@ const [muscleGroups, setMuscleGroups] = useState([])
 
 //axios call to get muscle groups, mapped in MuscleGroup component
 const getMuscleGroups = async () => {
-  const response = await axios.get('http://localhost:3001/musclegroups')
+  const response = await axios.get('/api/musclegroups')
   setMuscleGroups(response.data)
 }
 
@@ -35,13 +35,13 @@ const handleChange = (event) => {
     event.preventDefault()
     if (props.update) {
       console.log('put request')
-      let response = await axios.put(`http://localhost:3001/myworkouts/${id}`, props.formState)
+      let response = await axios.put(`/api/myworkouts/${id}`, props.formState)
       props.setFormState(props.initialState)
       navigate('/myworkouts')
     } else {
       console.log('post request')
 let response = await axios.post(
-        'http://localhost:3001/myworkouts',
+        '/api/myworkouts',
         props.formState
       )
       props.setFormState(props.initialState)

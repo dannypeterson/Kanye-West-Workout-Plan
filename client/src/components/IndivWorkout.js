@@ -11,7 +11,7 @@ const IndivWorkout = (props) => {
   const { id } = useParams()
 
   const getExercises = async () => {
-    const response = await axios.get(`http://localhost:3001/myworkouts/${id}`)
+    const response = await axios.get(`/api/myworkouts/${id}`)
     setWorkout(response.data)
   }
 
@@ -28,9 +28,7 @@ const IndivWorkout = (props) => {
   }
 
   const deleteWorkout = async () => {
-    const response = await axios.delete(
-      `http://localhost:3001/myworkouts/${id}`
-    )
+    const response = await axios.delete(`/api/myworkouts/${id}`)
     navigate('/myworkouts')
   }
 

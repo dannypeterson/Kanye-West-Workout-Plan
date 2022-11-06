@@ -11,7 +11,7 @@ const ExerciseList = (props) => {
   const { id } = useParams()
 
   const findWorkouts = async () => {
-    const response = await axios.get(`http://localhost:3001/musclegroups/${id}`)
+    const response = await axios.get(`/api/musclegroups/${id}`)
     setGroupName(response.data.name)
     setExercises(response.data.exercises)
   }
