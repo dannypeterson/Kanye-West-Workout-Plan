@@ -83,8 +83,10 @@ code {
 .homebuttons {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }
 
 .homebuttons > div {
@@ -95,8 +97,8 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 300px;
-  height: 100px;
+  width: 15rem;
+  height: 5rem;
   background-color: #24252A;
   border-radius: 20px;
   cursor: pointer;
@@ -165,20 +167,23 @@ code {
 /* MuscleGroup.js */
 .allgroups{
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .musclegroup {
   cursor: pointer;
   text-align: center;
-  width: 25vw;
-  height: 25vh;
+  width: 50vw;
+  height: auto;
   border: 3px solid bisque;
   border-radius: 50px;
   background-color: #24252A;
   color: bisque;
+  font-size: 2rem;
   margin: 15px;
+  padding-bottom: 50px;
 }
 
 .musclegroup:hover {
