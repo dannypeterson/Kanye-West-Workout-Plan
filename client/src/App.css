@@ -30,15 +30,18 @@ a:link, a:visited {
 
 .nav_links {
   list-style: none;
+
 }
 
 .nav_links li {
   display: inline-block;
   padding: 0px 20px;
+  font-size: 2rem;
 }
 
 .nav_links li a {
   transition: all 0.3s ease 0s;
+  font-size: 2rem;
 }
 .nav_links li p {
   transition: all 0.3s ease 0s;
@@ -86,7 +89,7 @@ code {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
+  height: 100vw;
 }
 
 .homebuttons > div {
@@ -97,12 +100,13 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 15rem;
-  height: 5rem;
+  width: 50%;
+  height: 20%;
   background-color: #24252A;
   border-radius: 20px;
   cursor: pointer;
   color:#edf0f1;
+  font-size: 2.5rem;
 }
 
 #link1:hover, #link2:hover, #link3:hover {
@@ -118,11 +122,12 @@ code {
   border-radius: 15px;
   text-align: center;
   color: bisque;
-  padding: 10px;;
+  padding: 10px;
 }
 
 #header1>h2 {
   margin: 20px;
+  font-size: 2rem;
 }
 
 
@@ -140,8 +145,10 @@ code {
 
 .nameworkout>input {
   height: 50px;
-  width: 200px;
+  width: 50%;
   border-radius: 20px;
+  margin: 30px 0;
+  font-size: 2.5rem;
 }
 
 .submit {
@@ -154,7 +161,7 @@ code {
   border-radius: 20px;;
   background-color: #24252A;
   cursor: pointer;
-  font-size: larger;
+  font-size: 3rem;
   color:#edf0f1;
   margin: 20px
 }
@@ -215,7 +222,8 @@ code {
 
 .addworkout {
   width: auto;
-  height: 50px;
+  height: auto;
+  font-size: 2rem;
   background-color: bisque;
   border-radius: 20px;
   cursor: pointer;
@@ -250,9 +258,9 @@ form{
 .myworkout {
   cursor: pointer;
   display: block;
-  color: #edf0f1;
+  color: #24252A;
   padding: 20px;
-  font-size: 24px;
+  font-size: 5rem;
 }
 
 .myworkout:hover {
@@ -272,13 +280,14 @@ form{
 }
 
 .addbutton {
-  width: 300px;
-  height: 50px;
+  width: 50%;
+  height: 10rem;
   border-radius: 25px;
   background-color: #24252A;
   color: #edf0f1;
   font-size: 16px;
   cursor: pointer;
+  font-size: 3rem;
 }
 
 .addbutton:hover {
@@ -335,9 +344,10 @@ color: darkblue
 /* featured workout page */
 .featured {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  width: 300px;
+  align-items: center;
+  flex-wrap: wrap;
   cursor: pointer;
 }
 
@@ -350,6 +360,8 @@ color: darkblue
   color: #edf0f1;
   text-align: center;
   margin: 20px 50px;
+  width: 300px;
+  font-size: 2rem;
 }
 
 #indiv:hover {
@@ -359,7 +371,7 @@ color: darkblue
 
 #featuredimg {
   width: 300px;
-  height: 200px;
+  height: auto;
 }
 
 /* featured workout id page */
