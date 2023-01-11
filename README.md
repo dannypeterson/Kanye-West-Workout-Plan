@@ -6,7 +6,7 @@ This is your new workout plan to look like Chris Hemsworth in Thor: Love and Thu
 
 ### By: Danny Peterson
 
-[Trello](https://trello.com/invite/b/baXH4kKC/ATTI3cf15580d0228577519cbe92949ec7a81F66135C/workout-plan) [LinkedIn](https://www.linkedin.com/in/danny-peterson-96678523b/) [GitHub](https://github.com/dannypeterson/)
+[Trello](https://trello.com/invite/b/baXH4kKC/ATTI3cf15580d0228577519cbe92949ec7a81F66135C/workout-plan) [LinkedIn](https://www.linkedin.com/in/danny-peterson-96678523b/) [GitHub](https://github.com/dannypeterson/) [Deployed Site](https://the-new-workout-plan.herokuapp.com/)
 
 ---
 

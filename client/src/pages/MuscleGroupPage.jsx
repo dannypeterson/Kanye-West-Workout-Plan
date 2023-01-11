@@ -63,13 +63,17 @@ let response = await axios.post(
           />
       </div>
 
-      <h1 className='select'>Select your muscle group:</h1>
-      <MuscleGroup muscleGroups={muscleGroups} 
-      getMuscleGroups={getMuscleGroups}
-      />
+      <h1 className='select'>Select muscle groups and add exercises to workout.</h1>
+      <h2 className='select'>Save once all exercises are added.</h2>
+
       <div className='submit'>
         <button onClick={handleSubmit}type="submit">Save Workout</button>
       </div>
+
+      <MuscleGroup muscleGroups={muscleGroups} 
+      getMuscleGroups={getMuscleGroups}
+      />
+      
     </div>
   )
 }
