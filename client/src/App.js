@@ -9,6 +9,7 @@ import FeaturedWorkout from './pages/FeaturedWorkout'
 import { useState, useEffect } from 'react'
 import IndivWorkout from './components/IndivWorkout'
 import Featured from './components/Featured'
+import WorkoutType from './pages/WorkoutType'
 
 const App = () => {
   //form on MuscleGroupPage
@@ -27,6 +28,7 @@ const App = () => {
   return (
     <div className="main">
       <Routes>
+        <Route path="/type" element={<WorkoutType />} />
         <Route path="/" element={<Home homePage={true} />} />
         <Route
           path="/musclegroups"
